@@ -9,7 +9,7 @@ Then /^the css guidelines should be followed$/ do
   raise("Could not find a cactus report") unless cactus_report.present?
 
   if failures.present?
-    message = "Something is wrong with the CSS on '#{page.current_url}'\n"
+    message = "Css guidelines not followed on '#{page.current_url}'\n"
       failures.each do |failure|
         message += "- #{failure.text}\n"
       end
