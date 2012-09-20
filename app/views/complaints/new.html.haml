@@ -1,0 +1,13 @@
+%h1 Send inn en klage
+
+= form_for @complaint do |f|
+  .description.editor
+    Lorem ipsum
+
+  .gray
+    = form_text_field f, :first_name, label: 'Fornavn'
+    = form_text_field f, :last_name,  label: 'Etternavn'
+    = form_text_field f, :phone,      label: 'Telefon'
+    = form_text_area  f, :comment,    label: 'Kommentar'
+
+    = f.submit 'Send inn!', class: "enhanced btn"

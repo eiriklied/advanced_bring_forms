@@ -2,6 +2,12 @@ AdvancedBringForms::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
+  resources :complaints, only: [:new, :create] do
+    get :confirmation, on: :collection
+  end
+
+  root to: 'complaints#new'
+
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
